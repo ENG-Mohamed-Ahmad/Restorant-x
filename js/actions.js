@@ -50,7 +50,7 @@ $(function(){
                         <input  type='text' class='nameInput' placeholder='meal name' />
                         <input  type='text' class='ingrInput' placeholder='ingrediants' />
                         <input  type='number' class='priceInput' placeholder='price' />
-                        <input type='submit' />
+                        <input type='submit' class='mealsubmit'/>
                     </form>
                 </div>
                 <div class='cont' id='cont${i}'>
