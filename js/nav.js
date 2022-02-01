@@ -6,12 +6,18 @@ const nav = () => {
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
-            <label class="logo">quick <span>food</span></label>
+            <label class="logo">
+                
+                <span id='titleOne'>quick</span>
+                <span id='titleSecond'>food</span>
+                <span class='hotLine'> <i id='hotLine'>01012534356</i> <span class='fa fa-phone'></span> </span>
+            </label>
             <ul>
-                <li><a href = "" class="active">menue</a></li>
-                <li><a href = "">Mybag</a></li>
-                <li><a href = "">contact</a></li>
-                <li><a href = "">about</a></li>
+                <li><a href = "" class="active menuAnchor" id='menuAnchor' title='menu'> <i class="fas fa-utensils"></i> </a></li>
+                <li><a href = "" class='myBag' id='myBag' title='bag'> <i class='fas fa-cart-plus'></i> </a></li>
+                <li><a href = "" class='mynotif' id='mynotif' title='notifications'> <i class='fas fa-bell notific'></i> </a></li>
+                <li><a href = "" class='sittings' id='sittings' title='sittings'> <i class="fas fa-cog"></i> </a></li>
+                <li><a href = "" title='contact us'> <i class='fas fa-users'></i> </a></li>
             </ul>
         </nav>
         `
@@ -52,6 +58,7 @@ labelLogo.querySelector('span').style = (`
 const navUl = document.querySelector('nav ul');
 navUl.style = (`
     float: right;
+    margin-right: 25px;
 `);
 // =======================================================================
 const lis = document.querySelectorAll('nav ul li');
@@ -92,4 +99,18 @@ Array.from(checkbtn).forEach(ele => {
     display: none;
     `)
 });
+// =======================================================================
+// add class list to
+const mainNavLinks = Array.from(document.querySelectorAll('nav ul li a'));
+mainNavLinks.forEach( (ele)=>{
+    ele.addEventListener('click',function(e){
+        e.preventDefault();
+        mainNavLinks.forEach(ele=>{
+            ele.classList.remove('active')
+        });
+        this.classList.add('active')
+    })
+});
+
+
 // =======================================================================
